@@ -58,7 +58,7 @@ async def info(ctx):
     datetimeinfo = "`!date_time gives the current date and time` \n"
     currentstuyweatherinfo = "`!cstuy or !currentstuyweather gives the weather at Stuyvesant High School` \n"
     pointforecastinfo = "`!cpoint LATITUDE LONGITUDE gives the weather at LATITUDE, LONGITUDE, put lat and lon with no additions like !pointforecast 40.7127 -74.0061` \n"
-    apodinfo = "`!apodinfo gives the astronomy picture of the day` \n"    
+    apodinfo = "`!apod gives the astronomy picture of the day` \n"    
     
     await ctx.send(f"{infoinfo}\n{datetimeinfo}\n{currentstuyweatherinfo}\n{pointforecastinfo}\n{apodinfo}")
 
@@ -83,6 +83,7 @@ async def date_time(ctx):
 #gives the weather at point lat, lon
 @bot.command()
 async def cpoint(ctx, lat, lon):
+    
     try:
         #gets data at lat and lon coordinates
         endpoint = f'https://api.weather.gov/points/{lat},{lon}'
@@ -221,7 +222,7 @@ async def apod(ctx):
         n = 2
         for i in range(0,n):
             if i == 0:
-                await ctx.send(f"Sorry, this is unavailable right now. Try one of these ones from the website: ")
+                await ctx.send(f"Sorry, this is unavailable right now. Have one of these: ")
             else:
                 await ctx.send(file=discord.File(basepath+f"/{image}"))
 
