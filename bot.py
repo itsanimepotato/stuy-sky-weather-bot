@@ -1,6 +1,7 @@
 #testing mode
 
 import requests
+import json
 from discord.ext import commands, tasks
 import discord
 from dataclasses import dataclass
@@ -11,28 +12,6 @@ import nasapy
 import os
 import random
 import apodBackup
-
-## NWS/NOAA API SIDE
-
-headers = {'StuySkyWeatherBot' : 'StuySky'}
-
-STUY_LAT = 40.7127
-STUY_LON = -74.0061
-
-#put this for commands needing the weather API
-
-''' 
-endpoint = 'https://api.weather.gov/INSERT_ENDPOINT_HERE'
-response = requests.get(endpoint, headers = headers)
-data = response.json()
-
-print(data) 
-
-'''
-
-## NASA API SIDE
-NASA_KEY = "vwwlK5uqo0BRhb4H0J6KRWgGailqnGK93lC5cdDT"
-nasa = nasapy.Nasa(key=NASA_KEY)
 
 
 ## DISCORD SIDE
@@ -79,6 +58,25 @@ async def date_time(ctx):
     
 
 # Commands using the Weather API
+
+## NWS/NOAA API SIDE
+
+#put this for commands needing the weather API
+
+''' 
+endpoint = 'https://api.weather.gov/INSERT_ENDPOINT_HERE'
+response = requests.get(endpoint, headers = headers)
+data = response.json()
+
+print(data) 
+
+'''
+
+headers = {'StuySkyWeatherBot' : 'StuySky'}
+
+STUY_LAT = 40.7127
+STUY_LON = -74.0061
+
 
 #gives the weather at point lat, lon
 @bot.command()
@@ -199,6 +197,10 @@ async def currentstuyweather(ctx):
 
 
 # Commands using NASA's APIs
+
+## NASA API SIDE
+NASA_KEY = "vwwlK5uqo0BRhb4H0J6KRWgGailqnGK93lC5cdDT"
+nasa = nasapy.Nasa(key=NASA_KEY)
 
 #gives astronomy picture of the day
 @bot.command()
