@@ -37,7 +37,7 @@ async def info(ctx):
     datetimeinfo = "`!date_time gives the current date and time` \n"
     currentstuyweatherinfo = "`!cstuy or !currentstuyweather gives the weather at Stuyvesant High School` \n"
     pointforecastinfo = "`!cpoint LATITUDE LONGITUDE gives the weather at LATITUDE, LONGITUDE, put lat and lon with no additions like !pointforecast 40.7127 -74.0061` \n"
-    apodinfo = "`!apod gives the astronomy picture of the day` \n"    
+    apodinfo = "`!apod gives the astronomy picture of the day (currently unavailable due to gov shutdown)` \n"    
     
     await ctx.send(f"{infoinfo}\n{datetimeinfo}\n{currentstuyweatherinfo}\n{pointforecastinfo}\n{apodinfo}")
 
@@ -55,6 +55,19 @@ async def date_time(ctx):
     print("time is " + time)
     
     await ctx.send(f"The date is {date} and the time is {time}.")
+    
+@bot.command()
+async def spam(ctx, amt):
+    n = int(amt)
+    if n > 5:
+        await ctx.send("i cant count that high sorry")
+        return
+    
+    for i in range(-1,n):
+        if i == -1:
+            await ctx.send(f"i am counting to {n}")
+        else:
+            await ctx.send(f"{i + 1}")
     
 
 # Commands using the Weather API
