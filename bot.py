@@ -13,9 +13,12 @@ import random
 import apodBackup
 import urllib.request
 
+import keys
+
 ## DISCORD SIDE
 
-BOT_TOKEN = "MTQyNDUxMTg3Mzk3NzU0ODkwMA.GaUMX4.0OvFNenam5qie-4Sy3z7trprT_AUG72mAQJHYo"
+BOT_TOKEN = keys.BOT_TOKEN
+
 CHANNEL_ID = 1418744998459084992
 
 intents = discord.Intents.all()
@@ -84,7 +87,7 @@ print(data)
 
 '''
 
-headers = {'StuySkyWeatherBot' : 'StuySky'}
+headers = keys.NWS_HEADER
 
 STUY_LAT = 40.7127
 STUY_LON = -74.0061
@@ -211,8 +214,7 @@ async def currentstuyweather(ctx):
 # Commands using NASA's APIs
 
 ## NASA API SIDE
-NASA_KEY = "vwwlK5uqo0BRhb4H0J6KRWgGailqnGK93lC5cdDT"
-
+NASA_KEY = keys.NASA_KEY
 #gives astronomy picture of the day
 @bot.command()
 async def apod(ctx):
@@ -246,4 +248,5 @@ async def apod(ctx):
                 await ctx.send(file=discord.File(basepath+f"/{image}"))
 
 #sends to bot in discord
+                
 bot.run(BOT_TOKEN)
