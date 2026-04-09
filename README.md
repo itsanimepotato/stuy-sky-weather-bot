@@ -8,7 +8,7 @@ If you want to add code/commands/functionality, create a pull request :)
 
 ### NO API COMMANDS:  
 ``` !date_time ``` outputs current date and time  
-```!logo``` outputs the StuySky Logo
+```!logo``` outputs the StuySky Logo  
 ```!spam N``` outputs a message of a bot counting up to N, limiting at 5
 
 ### METEOROLOGY COMMANDS:
