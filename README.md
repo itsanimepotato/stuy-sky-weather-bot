@@ -1,7 +1,7 @@
 # stuy-sky-weather-bot
 
-The purpose of this bot is to output weather data for the StuySky Discord server using a weather API and discord.py
-
+The purpose of this bot is to output interesting data for the StuySky Discord server using a discord.py and a various amount of APIs
+If you want to add code/commands/functionality, create a pull request :)
 ## Commands:
 
 ```!info``` outputs this command list  
@@ -9,7 +9,7 @@ The purpose of this bot is to output weather data for the StuySky Discord server
 ### NO API COMMANDS:  
 ``` !date_time ``` outputs current date and time  
 ```!logo``` outputs the StuySky Logo
-```!spam N``` outputs a message of a bot counting up to N
+```!spam N``` outputs a message of a bot counting up to N, limiting at 5
 
 ### METEOROLOGY COMMANDS:
 ```!cstuy or !currentstuyweather``` outputs the weather at Stuyvesant High School  
